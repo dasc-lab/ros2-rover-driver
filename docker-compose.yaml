@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  ros1:
+    build:
+      context: ./
+      dockerfile: ros1.Dockerfile
+    devices: 
+      - "/dev/ttyACM0:/dev/ttyACM0"
+    tty: true
+    network_mode: "host"
+    environment:
+      # - "ROS_HOSTNAME=127.0.0.0"
+      - "ROS_MASTER_URI=http://127.0.0.1:11311"
+
+
+#DO WE NEED A ROS2 IMAGE WITHOUT BRIDGE?
+  ros2:
+    image: ros:foxy
+    tty: true
+    network_mode: "host"
+    depends_on:
+      - ros1
+      - bridge
+    environment:
+      # - "ROS_HOSTNAME=127.0.0.0"
+      - "ROS_MASTER_URI=http://127.0.0.1:11311"
+    # build:
+    #   context: ./
+    #   dockerfile: ros2.Dockerfile
+
+  bridge:
+    image: ros:foxy-ros1-bridge
+    environment:
+      # - "ROS_HOSTNAME=bridge"
+      - "ROS_MASTER_URI=http://127.0.0.1:11311"
+    command: ros2 run ros1_bridge dynamic_bridge --bridge-all-1to2-topics  --bridge-all-2to1-topics
+    depends_on:
+      - ros1
+    network_mode: "host"
+
+
