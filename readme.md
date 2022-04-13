@@ -26,7 +26,7 @@ docker run --rm -it --net=host --device=/dev/ttyACM0 rover_driver
 
 Testing:
 First source
-```source devel\setup.bash```
+```source devel/setup.bash```
 then roslaunch 
 ``` roslaunch roboclaw_node roboclaw.launch```
 Launch roscore on laptop/host
@@ -35,3 +35,11 @@ Note: Communication pipeline is ros2/joystick->bridge->ros1/container->tx2/roboc
 
 Ros1-Ros2 Bridge:
 Make sure ros1 container uses a launch file so that roscore starts, as it needs a master. 
+
+Note: DON'T source both ros1 and ros2 in same terminal
+
+Note: 
+Manually publish message to ros2:
+```
+ros2 topic pub /cmd_vel geometry_msgs/msg/Twist '{linear: {x: 1.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'
+```
