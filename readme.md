@@ -43,3 +43,7 @@ Manually publish message to ros2:
 ```
 ros2 topic pub /cmd_vel geometry_msgs/msg/Twist '{linear: {x: 1.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'
 ```
+To ssh into rover7 while they are both on swarm wifi: 
+```
+ssh ubuntu@rover7.local
+```
