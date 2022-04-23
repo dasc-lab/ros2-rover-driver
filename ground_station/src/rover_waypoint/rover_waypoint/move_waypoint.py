@@ -48,7 +48,7 @@ class WaypointController(Node):
         #initial values
         del_x0 = xg-x
         del_y0 = yg-y
-        alpha0 = np.atan2(del_y0,del_x0)
+        alpha0 = np.atan2(del_y0,del_)
 
         theta = q #theta is current rover angle in global
         #Rotate until in line with waypoint
