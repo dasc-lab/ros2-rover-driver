@@ -1,0 +1,12 @@
+version: '3'
+
+services:  
+  ros2controller:
+      image: chenrc98/vicon_px4_ros2_bridge:version1.0
+      tty: true
+      network_mode: "host"
+      # environment:
+        # - "ROS_HOSTNAME=127.0.0.0"
+        # - "ROS_MASTER_URI=http://127.0.0.1:11311"
+      volumes:
+        - ./src/rover_waypoint:/root/px4_ros_com_ros2/src/rover_waypoint

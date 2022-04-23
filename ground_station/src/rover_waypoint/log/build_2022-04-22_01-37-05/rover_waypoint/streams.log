@@ -1,0 +1,33 @@
+[0.399s] Invoking command in '/root/rover_waypoint': PYTHONPATH=/root/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/rover_waypoint build --build-base /root/rover_waypoint/build/rover_waypoint/build install --prefix /root/rover_waypoint/install/rover_waypoint --record /root/rover_waypoint/build/rover_waypoint/install.log --single-version-externally-managed
+[0.818s] running egg_info
+[0.819s] creating build/rover_waypoint/rover_waypoint.egg-info
+[0.819s] writing build/rover_waypoint/rover_waypoint.egg-info/PKG-INFO
+[0.819s] writing dependency_links to build/rover_waypoint/rover_waypoint.egg-info/dependency_links.txt
+[0.819s] writing entry points to build/rover_waypoint/rover_waypoint.egg-info/entry_points.txt
+[0.819s] writing requirements to build/rover_waypoint/rover_waypoint.egg-info/requires.txt
+[0.819s] writing top-level names to build/rover_waypoint/rover_waypoint.egg-info/top_level.txt
+[0.821s] writing manifest file 'build/rover_waypoint/rover_waypoint.egg-info/SOURCES.txt'
+[0.823s] reading manifest file 'build/rover_waypoint/rover_waypoint.egg-info/SOURCES.txt'
+[0.824s] writing manifest file 'build/rover_waypoint/rover_waypoint.egg-info/SOURCES.txt'
+[0.824s] running build
+[0.825s] running build_py
+[0.825s] creating /root/rover_waypoint/build/rover_waypoint/build
+[0.825s] creating /root/rover_waypoint/build/rover_waypoint/build/lib
+[0.825s] creating /root/rover_waypoint/build/rover_waypoint/build/lib/rover_waypoint
+[0.825s] copying rover_waypoint/__init__.py -> /root/rover_waypoint/build/rover_waypoint/build/lib/rover_waypoint
+[0.825s] running install
+[0.826s] running install_lib
+[0.827s] creating /root/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages/rover_waypoint
+[0.827s] copying /root/rover_waypoint/build/rover_waypoint/build/lib/rover_waypoint/__init__.py -> /root/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages/rover_waypoint
+[0.828s] byte-compiling /root/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages/rover_waypoint/__init__.py to __init__.cpython-38.pyc
+[0.828s] running install_data
+[0.829s] creating /root/rover_waypoint/install/rover_waypoint/share/ament_index
+[0.829s] creating /root/rover_waypoint/install/rover_waypoint/share/ament_index/resource_index
+[0.829s] creating /root/rover_waypoint/install/rover_waypoint/share/ament_index/resource_index/packages
+[0.829s] copying resource/rover_waypoint -> /root/rover_waypoint/install/rover_waypoint/share/ament_index/resource_index/packages
+[0.829s] copying package.xml -> /root/rover_waypoint/install/rover_waypoint/share/rover_waypoint
+[0.829s] running install_egg_info
+[0.831s] Copying build/rover_waypoint/rover_waypoint.egg-info to /root/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages/rover_waypoint-0.0.0-py3.8.egg-info
+[0.832s] running install_scripts
+[0.863s] writing list of installed files to '/root/rover_waypoint/build/rover_waypoint/install.log'
+[0.893s] Invoked command in '/root/rover_waypoint' returned '0': PYTHONPATH=/root/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/rover_waypoint build --build-base /root/rover_waypoint/build/rover_waypoint/build install --prefix /root/rover_waypoint/install/rover_waypoint --record /root/rover_waypoint/build/rover_waypoint/install.log --single-version-externally-managed
