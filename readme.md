@@ -4,8 +4,8 @@ put the follwing lines into install the prerequisite packages, as there is no do
 export DOCKER_COMPOSE_VERSION=1.27.4
 sudo apt-get install libhdf5-dev
 sudo apt-get install libssl-dev
-apt install python3
-apt install python3-pip
+sudo apt install python3
+sudo apt install python3-pip
 sudo pip3 install docker-compose=="${DOCKER_COMPOSE_VERSION}"
 pip install docker-compose
 ```
