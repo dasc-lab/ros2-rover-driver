@@ -5,9 +5,20 @@ import rclpy
 import numpy
 from rclpy.node import Node
 
+FORWARD_AXIS_INDEX = 1
+TURN_AXIS_INDEX = 3
+ARM_BUTTON_INDEX = 2
+CMD_MODE_BUTTON_INDEX = 0
+MAX_ARM_TIMEOUT = 0.5
+
+armed = False
+autonomous = False
+LIN_V_MAX = -2.0
+ANG_V_MAX = -4.0
+
+
 class JoystickSafety(Node):
-    armed = False
-    autonomous = False
+    
     def __init__(self): 
         super().__init__('joystick_safety')
         self.desVelSub = self.create_subscription(
@@ -66,8 +77,8 @@ class JoystickSafety(Node):
         return val * max
             
 
+    LIN_V_MAX = -2.0
 
-def main(args=None):
     rclpy.init(args=args)
 
     safety = JoystickSafety()

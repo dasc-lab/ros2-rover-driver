@@ -21,7 +21,9 @@ setup(
     entry_points={
         'console_scripts': [
             'hello_node = rover_waypoint.hello:main',
-            'move_forward = rover_waypoint.move_rover_forward:main'
+            'move_forward = rover_waypoint.move_rover_forward:main',
+            'joystick_safety = rover_waypoint.safety:main',
+            'move_waypoint = rover_waypoint.move_waypoint:main'
         ],
     },
 )

@@ -15,5 +15,7 @@
   <export>
     <build_type>ament_python</build_type>
     <depend>rclpy</depend>
+    <depend>vicon_receiver</depend>
+    <depend>scipy</depend>
   </export>
 </package>
