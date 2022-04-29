@@ -45,9 +45,9 @@ class WaypointController(Node):
         )
  
     def vicon_callback(self, msg):   
-        self.x_pos = msg.x_trans # TODO: some line to assign msg values to variable here
-        self.y_pos = msg.y_trans
-        self.z_pos = msg.z_trans
+        self.x_pos = msg.x_trans / 1000 # TODO: confirm vicon gives in mm
+        self.y_pos = msg.y_trans / 1000
+        self.z_pos = msg.z_trans / 1000
         self.yaw, pitch, roll = R.from_quat([msg.x_rot, msg.y_rot, msg.z_rot, msg.w]).as_euler(seq='zyx')
         # self.yaw, roll, pitch = tf_transformations.euler_from_quaternion([msg.w, msg.x_rot, msg.y_rot, msg.z_rot])[2]
         print(f"Roll: {roll*180.0/np.pi}, Pitch: {pitch*180.0/np.pi}, Yaw: {self.yaw*180.0/np.pi}") 
@@ -119,8 +119,7 @@ class WaypointController(Node):
         self.state = new_state
 
     def send_command(self, lin_vel, ang_vel):
-        raise NotImplementedError
-        return
+        self.desVelPub.publish([lin_vel, ang_vel])
 
     def run_rotate_1(self, k_omega = 1.0, threshold=5*np.pi/180):
         # uses the current state and the next target waypoint to determine where to go next
@@ -146,11 +145,63 @@ class WaypointController(Node):
             omega = 0.0
             send_command(0.0, omega)
             self.set_next_state("straight")
-            return "straight"
+            return
 
-    
+    def run_straight(self, k_omega = 1.0, k_d = 1.0, threshold_ang=5*np.pi/180, threshold_lin=0.1):
+        if  self.target_waypoint is None:
+            self.set_next_state("idle")
+            return
+
+        del_x = self.target_waypoint.x - self.x_pos
+        del_y = self.target_waypoint.y - self.y_pos
 
 
+        target_yaw = np.arctan2(del_y, del_x)
+
+        dist_error = np.sqrt(del_x**2 + del_y**2)
+        
+        yaw_error = self.yaw - target_yaw
+
+        if np.abs(yaw_error) > threshold_ang or np.abs(distance_error) > threshold_lin:
+            omega = - k_omega * yaw_error
+            d = k_d * dist_error
+            self.send_command(d, omega)
+            # self.set_next_state("rotate_1")
+            return
+        else:
+            omega = 0.0
+            d = 0.0
+            send_command(d, omega)
+            self.set_next_state("rotate_2")
+            return 
+
+
+        
+
+
+    def run_rotate_2(self, k_omega = 1.0, threshold=5*np.pi/180):
+        if self.target_waypoint is None:
+                    self.set_next_state("idle")
+                    return
+
+        del_x = self.target_waypoint.x - self.x_pos
+        del_y = self.target_waypoint.y - self.y_pos
+
+
+        target_yaw = np.arctan2(del_y, del_x)
+        
+        yaw_error = self.yaw - target_yaw
+
+        if np.abs(yaw_error) > threshold:
+            omega = - k_omega * yaw_error
+            self.send_command(0, omega)
+            # self.set_next_state("rotate_1")
+            return
+        else:
+            omega = 0.0
+            send_command(0.0, omega)
+            self.set_next_state("idle")
+            return 
 
 def main(args=None):
     rclpy.init(args=args)
