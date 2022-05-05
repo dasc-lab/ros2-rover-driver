@@ -47,3 +47,34 @@ To ssh into rover7 while they are both on swarm wifi:
 ```
 ssh ubuntu@rover7.local
 ```
+and then clone the repo if it already is not. Change directory into the main folder and run '''docker-compose build''' and '''docker-compose up'''
+
+Testing
+Then open up the ground station docker-compose file. Go into the px4_ros_com folder and run '''colcon build''' 
+
+TODO:
+Vicon receiver site: https://github.com/OPT4SMART/ros2-vicon-receiver
+need to add something to source and run the vicon receiver
+
+$ source vicon_receiver/install/setup.bash
+$ ros2 launch vicon_receiver client.launch.py
+
+this will make sure the vicon data is accessible
+
+in another docker container cd into the rover waypoint package and source and then build it seperately
+
+to run the move_waypoint use
+
+'''
+ros2 run rover_waypoint move_waypoint
+'''
+
+cmd_vel publisher works, publishing waypoint seems to work for finding location
+
+for now in a separate container, publish waypoint to test single waypoint
+
+'''
+ros2 topic pub -1 /des_wp geometry_msgs/msg/Pose '{position: {x: 0.3, y: 0.0, z: 0.0}, orientation: {x: 1.0, y: 0.0, z: 0.0 ,w: 1.0}}'
+'''
+
+TODO: Check that the waypoints are being correctly converted and that gains are sufficiently low, is moving way to fast with way too much distance

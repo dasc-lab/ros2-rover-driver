@@ -12,6 +12,8 @@ resource/rover_waypoint
 rover_waypoint/__init__.py
 rover_waypoint/hello.py
 rover_waypoint/move_rover_forward.py
+rover_waypoint/move_waypoint.py
+rover_waypoint/safety.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

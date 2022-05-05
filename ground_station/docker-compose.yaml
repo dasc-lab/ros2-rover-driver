@@ -4,13 +4,10 @@ services:
   ros2controller:
       build:
         context: ./
-        dockerfile: ros2controller.dockerfile
+        dockerfile: ros2controller.Dockerfile
       tty: true
       network_mode: "host"
-      # environment:imageimage
-        # - "ROS_HOSTNAME=127.0.0.0"
-        # - "ROS_MASTER_URI=http://127.0.0.1:11311"
-      devices:
-        - /dev/input/js0
+      # devices:
+      #   - /dev/input/js0
       volumes:
         - ./src/rover_waypoint:/root/px4_ros_com_ros2/src/rover_waypoint

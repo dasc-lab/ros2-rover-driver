@@ -1,0 +1,27 @@
+[0.408s] Invoking command in '/root/px4_ros_com_ros2/src/rover_waypoint': PYTHONPATH=/root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/rover_waypoint build --build-base /root/px4_ros_com_ros2/src/rover_waypoint/build/rover_waypoint/build install --prefix /root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint --record /root/px4_ros_com_ros2/src/rover_waypoint/build/rover_waypoint/install.log --single-version-externally-managed
+[0.779s] running egg_info
+[0.780s] writing build/rover_waypoint/rover_waypoint.egg-info/PKG-INFO
+[0.780s] writing dependency_links to build/rover_waypoint/rover_waypoint.egg-info/dependency_links.txt
+[0.781s] writing entry points to build/rover_waypoint/rover_waypoint.egg-info/entry_points.txt
+[0.781s] writing requirements to build/rover_waypoint/rover_waypoint.egg-info/requires.txt
+[0.781s] writing top-level names to build/rover_waypoint/rover_waypoint.egg-info/top_level.txt
+[0.785s] reading manifest file 'build/rover_waypoint/rover_waypoint.egg-info/SOURCES.txt'
+[0.786s] writing manifest file 'build/rover_waypoint/rover_waypoint.egg-info/SOURCES.txt'
+[0.786s] running build
+[0.787s] running build_py
+[0.787s] copying rover_waypoint/move_waypoint.py -> /root/px4_ros_com_ros2/src/rover_waypoint/build/rover_waypoint/build/lib/rover_waypoint
+[0.787s] running install
+[0.788s] running install_lib
+[0.790s] copying /root/px4_ros_com_ros2/src/rover_waypoint/build/rover_waypoint/build/lib/rover_waypoint/move_waypoint.py -> /root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages/rover_waypoint
+[0.791s] byte-compiling /root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages/rover_waypoint/move_waypoint.py to move_waypoint.cpython-38.pyc
+[0.792s] running install_data
+[0.793s] running install_egg_info
+[0.795s] removing '/root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages/rover_waypoint-0.0.0-py3.8.egg-info' (and everything under it)
+[0.795s] Copying build/rover_waypoint/rover_waypoint.egg-info to /root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages/rover_waypoint-0.0.0-py3.8.egg-info
+[0.796s] running install_scripts
+[0.821s] Installing hello_node script to /root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint/lib/rover_waypoint
+[0.822s] Installing joystick_safety script to /root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint/lib/rover_waypoint
+[0.822s] Installing move_forward script to /root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint/lib/rover_waypoint
+[0.822s] Installing move_waypoint script to /root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint/lib/rover_waypoint
+[0.822s] writing list of installed files to '/root/px4_ros_com_ros2/src/rover_waypoint/build/rover_waypoint/install.log'
+[0.847s] Invoked command in '/root/px4_ros_com_ros2/src/rover_waypoint' returned '0': PYTHONPATH=/root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/rover_waypoint build --build-base /root/px4_ros_com_ros2/src/rover_waypoint/build/rover_waypoint/build install --prefix /root/px4_ros_com_ros2/src/rover_waypoint/install/rover_waypoint --record /root/px4_ros_com_ros2/src/rover_waypoint/build/rover_waypoint/install.log --single-version-externally-managed
